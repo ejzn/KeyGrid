@@ -1,0 +1,35 @@
+$def with (keys, form)
+
+<h1>Plan A Key and Unit Management</h1>
+
+<h2>Keys</h2>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Assignee</th>
+        <th>Location</th>
+        <th>Unit</th>
+        <th>Status</th>
+    </tr>
+$for key in keys:
+    <tr>
+        <td>$key.code</td>
+        <td>$key.assignee</td>
+        <td>$key.location</td>
+        <td>$key.unit</td>
+        <td>$key.status</td>
+        <td>
+            <form action="/del/$key.id" method="post">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<form action="" method="post">
+$:form.render()
+</form>
+
+<h2>Units</h2>
+
+<h2>Locations</h2>
